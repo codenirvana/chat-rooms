@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Tech",
+        "id": "1"
+    },
+    {
+        "name": "Non-Tech",
+        "id": "2"
+    },
+    {
+        "name": "Random",
+        "id": "3"
+    }
+]

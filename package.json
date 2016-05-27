@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/codenirvana/chat-rooms#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "node-uuid": "^1.4.7"
   }
 }
