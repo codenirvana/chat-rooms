@@ -1,0 +1,25 @@
+{
+  "name": "chat-rooms",
+  "version": "1.0.0",
+  "description": "Node based chat room website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenirvana/chat-rooms.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "express",
+    "chat"
+  ],
+  "author": "Udit Vasu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codenirvana/chat-rooms/issues"
+  },
+  "homepage": "https://github.com/codenirvana/chat-rooms#readme"
+}
