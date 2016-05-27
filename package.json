@@ -2,7 +2,7 @@
   "name": "chat-rooms",
   "version": "1.0.0",
   "description": "Node based chat room website",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/codenirvana/chat-rooms/issues"
   },
-  "homepage": "https://github.com/codenirvana/chat-rooms#readme"
+  "homepage": "https://github.com/codenirvana/chat-rooms#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
