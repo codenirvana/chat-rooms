@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Chat Rooms
-    a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(href='/admin/rooms/add') Create New Chat Room
+    a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(href='#{baseUrl}/rooms/add') Create New Chat Room
     br
     br
     table#rooms.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
@@ -13,8 +13,8 @@ block content
         tbody
             each room in rooms
                 tr
-                    td= room.id
-                        a(href='/admin/rooms/delete/#{room.id}'): <i class="material-icons">delete</i>
-                        
                     td= room.name
-                        a(href='/admin/rooms/edit/#{room.id}'): <i class="material-icons">mode_edit</i>
+                        a(href='#{baseUrl}/rooms/edit/#{room.id}'): <i class="material-icons">mode_edit</i>
+                        
+                    td= room.id
+                        a(href='#{baseUrl}/rooms/delete/#{room.id}'): <i class="material-icons">delete</i>
