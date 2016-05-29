@@ -12,8 +12,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/admin', adminRouter);
 
-
-
 app.get('/', function (req, res) {
     res.render("index", { title: "Home" });
 });

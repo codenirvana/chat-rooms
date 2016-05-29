@@ -34,7 +34,7 @@ router.route('/rooms/add')
     });
 
 router.route('/rooms/edit/:id')
-    .get(function(req, res) {
+    .all(function (req, res, next) {
         var id = req.params.id;
         var room = _.find(rooms, r => r.id === id);
 
@@ -43,23 +43,17 @@ router.route('/rooms/edit/:id')
             return;
         }
 
+        res.locals.room = room;
+        next();
+    })
+    .get(function(req, res) {
         res.render('edit', {
             baseUrl: req.baseUrl,
-            title: "Edit Room",
-            room
+            title: "Edit Room"
         });
     })
     .post(function(req, res) {
-        var id = req.params.id;
-        var room = _.find(rooms, r => r.id === id);
-
-        if (!room) {
-            res.sendStatus(404);
-            return;
-        }
-
-        room.name = req.body.name;
-
+        res.locals.room.name = req.body.name;
         res.redirect(req.baseUrl + '/rooms');
     });
 
