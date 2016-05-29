@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var uuid = require('node-uuid');
+var _ = require('lodash');
+
 var app = express();
 
 var appName = "nChat";
@@ -42,9 +44,33 @@ app.post('/admin/rooms/add', function (req, res) {
 app.get('/admin/rooms/delete/:id', function (req, res) {
     var id = req.params.id;
 
-    rooms = rooms.filter(function (room) {
-        return room.id !== id;
-    });
+    rooms = rooms.filter(r => r.id !== id);
+
+    res.redirect('/admin/rooms');
+});
+
+app.get('/admin/rooms/edit/:id', function (req, res) {
+    var id = req.params.id;
+    var room = _.find(rooms, r => r.id === id);
+
+    if(!room) {
+        res.sendStatus(404);
+        return;
+    }
+
+    res.render('edit', { name: appName, title: "Add Group", room });
+});
+
+app.post('/admin/rooms/edit/:id', function (req, res) {
+    var id = req.params.id;
+    var room = _.find(rooms, r => r.id === id);
+
+    if(!room) {
+        res.sendStatus(404);
+        return;
+    }
+
+    room.name = req.body.name;
 
     res.redirect('/admin/rooms');
 });

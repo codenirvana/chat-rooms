@@ -10,7 +10,6 @@ table#rooms thead th {
 table#rooms tbody {
     font-size: 18px;
 }
-table#rooms .mdl-badge[data-badge]:after{
-    top: 0;
-    right: 20px;
+table#rooms td a {
+    margin-left: 10px;
 }

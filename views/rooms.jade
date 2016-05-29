@@ -14,5 +14,7 @@ block content
             each room in rooms
                 tr
                     td= room.id
-                        a(href='/admin/rooms/delete/#{room.id}'): span.mdl-badge(data-badge='x')
+                        a(href='/admin/rooms/delete/#{room.id}'): <i class="material-icons">delete</i>
+                        
                     td= room.name
+                        a(href='/admin/rooms/edit/#{room.id}'): <i class="material-icons">mode_edit</i>

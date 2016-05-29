@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Edit Room
+    
+    form.add-room(method='post')
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            input.mdl-textfield__input(type='text', name='name', value='#{room.name}')
+            label.mdl-textfield__label(for='name') Chat Room Name
+        br
+        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit') Save Chat Room
+        a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(href='/admin/rooms') Cancel
