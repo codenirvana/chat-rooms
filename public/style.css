@@ -13,3 +13,6 @@ table#rooms tbody {
 table#rooms td a {
     margin-left: 10px;
 }
+textarea {
+    width: 100%;
+}

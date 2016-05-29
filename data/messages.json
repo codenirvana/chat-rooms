@@ -1,0 +1,20 @@
+[
+ {
+  "text": "Msg1",
+  "roomId": "1",
+  "userId": "1",
+  "id": "1"
+ },
+ {
+  "text": "Msg2",
+  "roomId": "1",
+  "userId": "1",
+  "id": "2"
+ },
+ {
+  "text": "Msg3",
+  "roomId": "1",
+  "userId": "1",
+  "id": "3"
+ }
+]
