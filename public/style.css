@@ -1,7 +1,16 @@
-form.add-room .mdl-textfield{
-        width: 100%;
+form.add-room .mdl-textfield {
+    width: 100%;
 }
-
-.mdl-button{
+.mdl-button {
     margin-right: 10px;
+}
+table#rooms thead th {
+    font-size: 20px;
+}
+table#rooms tbody {
+    font-size: 18px;
+}
+table#rooms .mdl-badge[data-badge]:after{
+    top: 0;
+    right: 20px;
 }

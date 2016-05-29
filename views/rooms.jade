@@ -5,7 +5,7 @@ block content
     a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(href='/admin/rooms/add') Create New Chat Room
     br
     br
-    table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+    table#rooms.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
         thead
             tr
                 th Name
@@ -13,11 +13,6 @@ block content
         tbody
             each room in rooms
                 tr
-                    td= room.name
-                        a(href='/admin/rooms/delete/#{room.id}'): span.mdl-badge(data-badge='x')
-                        
                     td= room.id
-                    td
-
-
-</button>
+                        a(href='/admin/rooms/delete/#{room.id}'): span.mdl-badge(data-badge='x')
+                    td= room.name
