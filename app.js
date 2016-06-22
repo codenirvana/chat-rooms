@@ -18,6 +18,8 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
+var flash = require('connect-flash');
+app.use(flash());
 
 var authRouter = require('./auth');
 app.use(authRouter);
