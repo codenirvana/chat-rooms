@@ -1,3 +1,3 @@
-# nChat
+# :construction:  nChat
 
-Node based chat room website
+Chat room web app
