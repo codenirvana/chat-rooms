@@ -1,6 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var session = require('express-session');
+var redis   = require("redis");
+var redisStore = require('connect-redis')(session);
+var client  = redis.createClient();
+
 require('./passport-init');
 
 var app = express();
@@ -12,9 +17,13 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(require('express-session')({
-    secret: 'keyboard cat', resave: false, saveUninitialized: false
+app.use(session({
+    secret: 'chat secret',
+    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
+    saveUninitialized: false,
+    resave: false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
